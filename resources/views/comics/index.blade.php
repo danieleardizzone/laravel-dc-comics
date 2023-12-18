@@ -24,8 +24,8 @@
                <tr>
                   <td scope="row">{{ $comic->id }}</td>
                   <td>{{ $comic->title }}</td>
-                  <td><img src="{{ $comic->thumb }}" alt=""></td>
-                  <td>{{ '$'.$comic->price }}</td>
+                  <td>{{ $comic->thumb }}</td>
+                  <td>{{ $comic->price }}</td>
                   <td>{{ $comic->description }}</td>
                </tr>
                    
