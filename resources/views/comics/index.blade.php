@@ -5,6 +5,7 @@
    <section>
       <div class="container">
          <h1>DC comics</h1>
+         <a href="{{ route('comics.create') }}">Nuovo fumetto</a>
          <table class="table">
             <thead>
                <tr>
