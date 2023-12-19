@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-   @dd($comics)
    
    <section>
       <div class="container">
@@ -19,17 +17,25 @@
             </thead>
             <tbody>
 
-               @foreach ($comics as $comic)
+               @forelse ($comics as $comic)
 
-               <tr>
-                  <td scope="row">{{ $comic->id }}</td>
-                  <td>{{ $comic->title }}</td>
-                  <td>{{ $comic->thumb }}</td>
-                  <td>{{ $comic->price }}</td>
-                  <td>{{ $comic->description }}</td>
-               </tr>
-                   
-               @endforeach
+                  <tr>
+                     <td scope="row">{{ $comic->id }}</td>
+                     <td><a href="{{ route('comics.show', $comic) }}">{{ $comic->title }}</a></td>
+                     <td><img src="{{ $comic->thumb }}" height="300px" alt=""></td>
+                     <td>{{ $comic->price }}</td>
+                     <td>{{ $comic->description }}</td>
+                  </tr>
+
+               @empty
+
+                  <tr>
+                     <td colspan="6">
+                        Nessuna pasta trovata
+                     </td>
+                  </tr>
+
+               @endforelse
             </tbody>
          </table>
       </div>
